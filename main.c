@@ -61,7 +61,7 @@ int main(){
                 printf("Usuario (apenas numeros): ");
                 scanf("%19s", usuario_digitado);
                 
-                // Verifica se todos são dígitos (sem isdigit)
+                // Verifica se todos são dígitos
                 eh_valido = 1;
                 for(j = 0; usuario_digitado[j] != '\0'; j++) {
                     if(usuario_digitado[j] < '0' || usuario_digitado[j] > '9') {
@@ -74,10 +74,9 @@ int main(){
                 printf("Erro: O usuario deve conter apenas numeros (0-9)!\n");
             }
             
-            // Verifica se usuário já existe (sem strcmp)
+            // Verifica se usuário já existe
             usuario_existe = 0;
-            for(i = 0; i < total_usuarios; i++) {
-                // Comparação manual de strings
+            for(i = 0; i < total_usuarios; i++) {s
                 int sao_iguais = 1;
                 for(j = 0; usuarios[i][j] != '\0' || usuario_digitado[j] != '\0'; j++) {
                     if(usuarios[i][j] != usuario_digitado[j]) {
@@ -100,11 +99,10 @@ int main(){
             printf("Senha: ");
             scanf("%49s", senhas[total_usuarios]);
             
-            // Copia manual do usuário (sem strcpy)
             for(j = 0; usuario_digitado[j] != '\0'; j++) {
                 usuarios[total_usuarios][j] = usuario_digitado[j];
             }
-            usuarios[total_usuarios][j] = '\0'; // Terminador
+            usuarios[total_usuarios][j] = '\0';
             
             total_usuarios++;
             printf("Usuario cadastrado com sucesso!\n");
